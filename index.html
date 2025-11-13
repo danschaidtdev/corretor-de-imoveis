@@ -3,49 +3,45 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>CRM Imobiliário - Início</title>
+  <title>CRM Imobiliário</title>
   <link rel="stylesheet" href="css/geral.css" />
-  <link rel="stylesheet" href="css/index.css" />
+  <style>
+    body, html { margin:0; padding:0; height:100%; font-family: sans-serif; }
+    header { background:#48E7F9; padding:10px; text-align:center; }
+    header h1 { margin:0; color:#363535; }
+    nav a { margin:0 10px; color:#363535; text-decoration:none; font-weight:bold; }
+    main { height: calc(100% - 60px); display:flex; flex-direction:column; }
+    iframe { flex:1; width:100%; border:none; }
+    footer { text-align:center; padding:10px; background:#E0E0E0; }
+  </style>
 </head>
 <body>
   <header>
     <h1>CRM Imobiliário</h1>
     <nav>
-      <!-- Página de Captação de Leads ainda no GitHub Pages -->
-      <a href="contato.html">Captação</a> |
-      <!-- Redirecionamentos para o Web App -->
-      <a href="https://script.google.com/macros/s/AKfycbyZNvOz1Kg50pPF6fAfEg1_iK3tM6KgxJYOMmuFAWYhc5e04YuQyU7FFrwCaVzbld2c0A/exec?page=login">
-        Login Corretor
-      </a> |
-      <a href="https://script.google.com/macros/s/AKfycbyZNvOz1Kg50pPF6fAfEg1_iK3tM6KgxJYOMmuFAWYhc5e04YuQyU7FFrwCaVzbld2c0A/exec?page=cadastro">
-        Cadastrar Corretor
-      </a> |
-      <a href="https://script.google.com/macros/s/AKfycbyZNvOz1Kg50pPF6fAfEg1_iK3tM6KgxJYOMmuFAWYhc5e04YuQyU7FFrwCaVzbld2c0A/exec?page=dashboard">
-        Dashboard
-      </a>
+      <a href="#" onclick="carregarPagina('login')">Login Corretor</a>
+      <a href="#" onclick="carregarPagina('cadastro')">Cadastrar Corretor</a>
+      <a href="#" onclick="carregarPagina('dashboard')">Dashboard</a>
     </nav>
   </header>
 
   <main>
-    <section>
-      <h2>Bem-vindo ao CRM Imobiliário</h2>
-      <p>Use este sistema para gerenciar leads e imóveis de forma prática e rápida.</p>
-      <p>Clique em "Login Corretor" para acessar o sistema ou "Cadastrar Corretor" para criar uma nova conta.</p>
-    </section>
-
-    <section>
-      <h2>Funcionalidades</h2>
-      <ul>
-        <li>Cadastro e gestão de corretores</li>
-        <li>Cadastro e busca de imóveis</li>
-        <li>Controle de leads e estatísticas</li>
-        <li>Geração de contratos e links para WhatsApp</li>
-      </ul>
-    </section>
+    <iframe id="conteudoApp" src=""></iframe>
   </main>
 
   <footer>
-    <p>&copy; 2025 CRM Imobiliário - Todos os direitos reservados</p>
+    &copy; 2025 CRM Imobiliário - Todos os direitos reservados
   </footer>
+
+  <script>
+    const WEBAPP_URL = 'https://script.google.com/macros/s/AKfycbyZNvOz1Kg50pPF6fAfEg1_iK3tM6KgxJYOMmuFAWYhc5e04YuQyU7FFrwCaVzbld2c0A/exec';
+
+    function carregarPagina(pagina) {
+      document.getElementById('conteudoApp').src = WEBAPP_URL + '?page=' + pagina;
+    }
+
+    // Carregar login por padrão ao abrir o site
+    carregarPagina('login');
+  </script>
 </body>
 </html>
