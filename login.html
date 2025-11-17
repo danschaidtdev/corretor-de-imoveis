@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Login - Corretores</title>
+  <link rel="stylesheet" href="css/geral.css" />
+  <link rel="stylesheet" href="css/login.css" />
+  <script src="js/api.js"></script>
+  <script>
+    async function onLogin(e) {
+      e.preventDefault();
+      const username = document.getElementById('username').value;
+      const senha = document.getElementById('senha').value;
+      // enviar para backend
+      const resp = await apiPost('loginCorretor', { username, senha });
+      if (resp.sucesso) {
+        // salvar token simples no localStorage (ex: id_corretor)
+        localStorage.setItem('corretor', JSON.stringify(resp.resultado.corretor));
+        location.href = 'dashboard.html';
+      } else {
+        alert('Erro: ' + (resp.erro || JSON.stringify(resp)));
+      }
+    }
+  </script>
+</head>
+<body>
+  <main class="container">
+    <h1>Login Corretores</h1>
+    <form onsubmit="onLogin(event)">
+      <label>Usuário<input id="username" type="text" required /></label>
+      <label>Senha<input id="senha" type="password" required /></label>
+      <button type="submit">Entrar</button>
+    </form>
+    <p><a href="cadastro_corretor.html">Cadastrar novo corretor</a></p>
+  </main>
+</body>
+</html>

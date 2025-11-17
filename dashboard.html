@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Dashboard - Corretor</title>
+  <link rel="stylesheet" href="css/geral.css" />
+  <link rel="stylesheet" href="css/dashboard.css" />
+  <script src="js/api.js"></script>
+  <script src="js/dashboard.js" defer></script>
+</head>
+<body>
+  <main class="container">
+    <header>
+      <h1>Dashboard</h1>
+      <div id="usuarioInfo"></div>
+    </header>
+
+    <section id="estatisticas">
+      <h2>Estatísticas</h2>
+      <div id="resumoMensal"></div>
+      <div id="filtrosRelatorio">
+        <label>Data Início <input id="dataInicio" type="date" /></label>
+        <label>Data Fim <input id="dataFim" type="date" /></label>
+        <button id="btnPesquisar">Pesquisar</button>
+      </div>
+      <div id="resultadoPesquisa"></div>
+    </section>
+
+    <section id="cadastroImovel">
+      <h2>Cadastrar Imóvel</h2>
+      <form id="formCadastroImovel">
+        <label>Cidade <input name="endereco_cidade" required /></label>
+        <label>Bairro <input name="endereco_bairro" required /></label>
+        <label>Rua <input name="endereco_rua" /></label>
+        <label>Descrição <textarea name="descricao"></textarea></label>
+        <label>Quartos <input name="quartos" type="number" /></label>
+        <label>Banheiros <input name="banheiros" type="number" /></label>
+        <label>Tipo <select name="tipo_imovel"><option>Casa</option><option>Apartamento</option><option>Comercial</option><option>Terreno</option></select></label>
+        <label>Faixa de preço <input name="faixa_preco" /></label>
+        <label>Imagens <input name="imagens" type="file" accept="image/*" multiple /></label>
+        <button type="submit">Salvar Imóvel</button>
+      </form>
+      <div id="statusImovel"></div>
+    </section>
+
+    <section id="leads">
+      <h2>Leads</h2>
+      <div id="listaLeads"></div>
+    </section>
+
+  </main>
+</body>
+</html>

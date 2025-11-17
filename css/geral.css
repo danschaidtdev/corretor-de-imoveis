@@ -1,0 +1,17 @@
+/* [GITPAGES] css/geral.css - Estilos globais simples */
+:root {
+  --cor-clara: #f6f6f6;
+  --cor-vermelha: #e74c3c;
+  --cor-ciano: #48E7F9;
+  --cor-cinza: #E0E0E0;
+  --cor-escura: #363535;
+  --padding: 12px;
+  --maxwidth: 900px;
+}
+*{box-sizing:border-box}
+body{font-family:Arial,Helvetica,sans-serif;background:var(--cor-clara);color:var(--cor-escura);margin:0;padding:20px;display:flex;justify-content:center}
+.container{width:100%;max-width:var(--maxwidth);background:#fff;padding:var(--padding);border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.05)}
+header h1{margin:0 0 12px 0}
+label{display:block;margin-bottom:8px}
+input,textarea,select,button{width:100%;padding:8px;border:1px solid var(--cor-cinza);border-radius:6px}
+button{background:var(--cor-ciano);border:none;color:#000;font-weight:700;padding:10px}

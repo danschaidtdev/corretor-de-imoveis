@@ -1,0 +1,4 @@
+/* css/contato.css - estilos do formulário de captação */
+#formContato label { margin-bottom: 10px; }
+#status { margin-top: 10px; color: var(--cor-escura); }
+#opcoesNegociacaoSecundarias { margin-bottom: 10px; }

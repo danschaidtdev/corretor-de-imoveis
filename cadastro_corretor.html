@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Cadastro de Corretor</title>
+  <link rel="stylesheet" href="css/geral.css" />
+  <link rel="stylesheet" href="css/cadastro_corretor.css" />
+  <script src="js/api.js"></script>
+  <script src="js/cadastro_corretor.js" defer></script>
+</head>
+<body>
+  <main class="container">
+    <h1>Cadastro de Corretor</h1>
+    <form id="formCadastroCorretor">
+      <label>Nome completo <input name="nome_completo" required /></label>
+      <label>Username <input name="username" required /></label>
+      <label>Senha <input name="senha" type="password" required /></label>
+      <label>E-mail <input name="email" type="email" /></label>
+      <label>Telefone <input name="telefone" /></label>
+      <label>CRECI <input name="creci" /></label>
+      <label>Imagem CRECI <input name="imagem_creci" type="file" accept="image/*" /></label>
+      <label>Foto perfil <input name="foto_perfil" type="file" accept="image/*" /></label>
+      <button type="submit">Cadastrar</button>
+      <div id="status"></div>
+    </form>
+  </main>
+</body>
+</html>

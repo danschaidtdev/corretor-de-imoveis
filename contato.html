@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Contato - Captação de Leads</title>
+  <link rel="stylesheet" href="css/geral.css" />
+  <link rel="stylesheet" href="css/contato.css" />
+  <script src="js/api.js"></script>
+  <script src="js/contato.js" defer></script>
+  <!-- reCAPTCHA site key: inserir no HTML se usar -->
+  <!-- <script src="https://www.google.com/recaptcha/api.js" async defer></script> -->
+</head>
+<body>
+  <main class="container">
+    <h1>Quero ser contactado</h1>
+    <form id="formContato">
+      <label>Nome <input type="text" name="nome" required /></label>
+      <label>Telefone <input type="tel" name="telefone" required /></label>
+      <label>E-mail <input type="email" name="email" /></label>
+      <label>Cidade <input type="text" name="cidade" /></label>
+      <label>Bairro <input type="text" name="bairro" /></label>
+      <label>Tipo de imóvel
+        <select name="tipo_imovel">
+          <option>Casa</option>
+          <option>Apartamento</option>
+          <option>Comercial</option>
+          <option>Terreno</option>
+        </select>
+      </label>
+      <label>Tipo de negociação
+        <select name="tipo_negociacao" id="selectNegociacao">
+          <option>Aluga</option>
+          <option>Vende</option>
+          <option>Compra</option>
+        </select>
+      </label>
+      <div id="opcoesNegociacaoSecundarias">
+        <!-- dynamically populated -->
+      </div>
+      <label>Faixa de preço <input type="text" name="faixa_preco" placeholder="Ex: 300000-500000" /></label>
+      <label>Mensagem <textarea name="mensagem"></textarea></label>
+      <!-- se usar reCAPTCHA, coloque aqui o widget -->
+      <button type="submit">Enviar</button>
+      <div id="status"></div>
+    </form>
+  </main>
+</body>
+</html>

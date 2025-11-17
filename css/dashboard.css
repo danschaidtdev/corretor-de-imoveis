@@ -1,0 +1,5 @@
+/* css/dashboard.css */
+#cadastroImovel{margin-top:20px}
+#leads{margin-top:20px}
+#listaLeads table{width:100%;border-collapse:collapse}
+#listaLeads th, #listaLeads td{border:1px solid var(--cor-cinza);padding:6px;text-align:left}
